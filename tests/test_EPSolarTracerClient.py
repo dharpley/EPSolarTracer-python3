@@ -24,4 +24,4 @@ class EPSolarTracerClientTestCase(unittest.TestCase):
 
         client = EPSolarTracerClient(modbusclient)
 
-        print client.read_input_register(RatedDatum.ArrayRatedVoltage)
+        print(client.read_input_register(RatedDatum.ArrayRatedVoltage))

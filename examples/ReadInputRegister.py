@@ -12,7 +12,7 @@ modbusclient = ModbusTcpClient("192.168.2.111", port=8088, framer=ModbusRtuFrame
 epsolarclient = EPSolarTracerClient(modbusclient)
 
 # in this example we'll retrieve the battery SOC
-print "Retrieving battery SOC (%s)" % RealtimeDatum.BatterySOC.description
+print("Retrieving battery SOC (%s)" % RealtimeDatum.BatterySOC.description)
 
 # call read_input_register
 response = epsolarclient.read_input_register(RealtimeDatum.BatterySOC)
@@ -24,8 +24,8 @@ response = epsolarclient.read_input_register(RealtimeDatum.BatterySOC)
 # And when response.success is false response.value will contain the error message
 
 if response.success:
-    print "Battery SOC: " + response.data.value
-    print "Raw value: " + response.data.raw_value.registers[0].value
+    print("Battery SOC: " + response.data.value)
+    print("Raw value: " + response.data.raw_value.registers[0].value)
 
 else:
-    print "An error occured while retrieving battery SOC (%s)" % response.data
+    print("An error occured while retrieving battery SOC (%s)" % response.data)
