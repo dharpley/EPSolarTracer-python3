@@ -51,7 +51,7 @@ class EPSolarTracerClient(object):
         raw_value = raw_response.registers[0].value
 
         if isinstance(raw_response, ReadInputRegistersResponse):
-            value = float(raw_value.registers[0]) / input_register.times
+            value = float(raw_value.registers[0]) / input_register.multiplier
             response = Response(True, DataResponse(value, raw_value, input_register.unit))
         else:
             response = Response(False, raw_value.string)
@@ -68,7 +68,7 @@ class EPSolarTracerClient(object):
         raw_value = raw_response.registers[0].value
 
         if isinstance(raw_response, ReadHoldingRegistersResponse):
-            value = float(raw_response.registers[0]) / holding_register.times
+            value = float(raw_response.registers[0]) / holding_register.multiplier
             response = Response(True, DataResponse(value, raw_value, holding_register.unit))
 
         else:

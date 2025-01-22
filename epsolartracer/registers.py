@@ -5,15 +5,15 @@ class Register(object):
     Defines a register
     """
 
-    def __init__(self, address, description, unit, times):
+    def __init__(self, address, description, unit, multiplier):
         """
         Constructor
         :param address: Address of the register
         :param description: Description given in the documentation
         :param unit: Unit the returned value is in
-        :param times: Multiplication factor
+        :param multiplier: Multiplication factor
         """
-        self.times = times
+        self.multiplier = multiplier
         self.unit = unit
         self.description = description
         self.address = address
