@@ -107,7 +107,7 @@ class StatisticalParameters:
     GeneratedEnergyYearL = InputRegister(0x3310, "00: Clear on 1, Jan", "KWH", 100)
     GeneratedEnergyYearH = InputRegister(0x3311, "00: Clear on 1, Jan", "KWH", 100)
     TotalGeneratedEnergyL = InputRegister(0x3312, "", "KWH", 100)
-    TotalGeneratedEnergyH = InputRegister(033013, "", "KWH", 100)
+    TotalGeneratedEnergyH = InputRegister(0x33013, "", "KWH", 100)
     BatteryVoltage = InputRegister(0x331A, "Battery voltage", "V", 100)
     BatteryCurrentL = InputRegister(0x331B, "Battery Current", "A", 100)
     BatteryCurrentH = InputRegister(0x331C, "Battery Current", "A", 100)
