@@ -5,13 +5,13 @@ from pymodbus.transaction import ModbusRtuFramer
 from epsolartracer.registers import InputRegister, HoldingRegister
 
 
-class Response(object):
+class Response:
     def __init__(self, success, data):
         self.success = success
         self.data = data
 
 
-class DataResponse(object):
+class DataResponse:
     def __init__(self, value, raw_value, unit):
         # type: (float, float, str) -> None
         self.unit = unit
@@ -22,7 +22,7 @@ class DataResponse(object):
         return str(self.value) + self.unit
 
 
-class EPSolarTracerClient(object):
+class EPSolarTracerClient:
     def __init__(self, modbusclient, unit=1):
         # type: (BaseModbusClient, int) -> None
 

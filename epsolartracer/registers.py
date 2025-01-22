@@ -1,6 +1,6 @@
 # region Types
 
-class Register(object):
+class Register:
     """
     Defines a register
     """
@@ -19,7 +19,7 @@ class Register(object):
         self.address = address
 
 
-class Coil(object):
+class Coil:
     """
     Defines a coil
     """
@@ -49,7 +49,7 @@ class DiscreteInput(Coil):
 # endregion
 
 # region Registers
-class RatedDatum(object):
+class RatedDatum:
     ArrayRatedVoltage = InputRegister(0x3000, "PV array rated voltage", "V", 100)
     ArrayRatedCurrent = InputRegister(0x3001, "PV array rated current", "A", 100)
     ArrayRatedPowerL = InputRegister(0x3002, "PV array rated power L", "W", 100)
@@ -62,7 +62,7 @@ class RatedDatum(object):
     RatedCurrentOfLoad = InputRegister(0x300E, "Rated current of load", "A", 100)
 
 
-class RealtimeDatum(object):
+class RealtimeDatum:
     PvArrayInputVoltage = InputRegister(0x3100, "Solar charge controller--PV array voltage", "V", 100)
     PvArrayInputCurrent = InputRegister(0x3101, "Solar charge controller--PV array Current", "A", 100)
     PvArrayInputPowerL = InputRegister(0x3102, "Solar charge controller--PV array Power", "W", 100)
@@ -81,13 +81,13 @@ class RealtimeDatum(object):
     BatteryRealRatedPower = InputRegister(0x311D, "Current system rated voltage 1200=12V", "VA", 100)
 
 
-class RealtimeStatus(object):
+class RealtimeStatus:
     BatteryStatus = InputRegister(0x3200, "D3-D0: 01H Overvolt , 00H Normal , 02H Under Volt, 03H Low Volt Disconnect, 04H Fault D7-D4: 00H Normal, 01H Over Temp.(Higher than the warning settings), 02H Low Temp.(Lower than the warning settings), D8: Battery inner resistance abnormal 1, normal 0 D15: 1-Wrong identification for rated voltage", "", 1)
     ChargingEquipmentStatus = InputRegister(0x3201, "D15-D14: Input volt status. 00 normal, 01 no power connected, 02H Higher volt input, 03H Input volt error. D13: Charging MOSFET is short. D12: Charging or Anti-reverse MOSFET is short. D11: Anti-reverse MOSFET is short. D10: Input is over current. D9: The load is Over current. D8: The load is short. D7: Load MOSFET is short. D4: PV Input is short. D3-2: Charging status. 00 No charging,01 Float,02 Boost, 03 Equalization. D1: 0 Normal, 1 Fault. D0: 1 Running, 0 Standby.", "", 1)
     DischargeEquipmentStatus = InputRegister(0x3202, "D15-D14: 00H normal, 01H low, 02H High, 03H no access Input volt error. D13-D12: output power:00-light load,01-moderate,02-rated,03-overlo ad D11: short circuit D10: unable to discharge D9: unable to stop discharging D8: output voltage abnormal D7: input overpressure D6: high voltage side short circuit D5: boost overpressure D4: output overpressure D1: 0 Normal, 1 Fault. D0: 1 Running, 0 Standby", "", 1)
 
 
-class StatisticalParameters(object):
+class StatisticalParameters:
     MaximumPVVoltageToday = InputRegister(0x3300, "00: 00 Refresh every day", "V", 100)
     MinimunPVVoltageToday = InputRegister(0x3301, "00: 00 Refresh every day", "V", 100)
     MaximumBatteryVoltageToday = InputRegister(0x3302, "00: 00 Refresh every day", "V", 100)
@@ -113,19 +113,19 @@ class StatisticalParameters(object):
     BatteryCurrentH = InputRegister(0x331C, "Battery Current", "A", 100)
 
 
-class SettingParameters(object):
+class SettingParameters:
     pass
 
 
 # endregion
 
 # region Coils
-class SwitchValues(object):
+class SwitchValues:
     ChargingDeviceOnOff = Coil(0, "1 Charging device on\n"
                                   "0 Charging device off")
 
 
-class DescreteValues(object):
+class DescreteValues:
     pass
 
 # endregion
